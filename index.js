@@ -228,7 +228,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(index) {
-    return `The artist at ${artists[index].id} is ${artists[index].name}`;
+    return `The artist at index ${index} is ${artists[index].name}`;
 }
 getArtistByIndex(0);
 console.log(getArtistByIndex(0));
@@ -237,16 +237,19 @@ console.log(getArtistByIndex(0));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(artists, index){
+  let i = parseInt(artists[index].years);
+  return console.log(i);
 }
 
+console.log(get20s(artists, 0));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
+ * 
  * removeArtist removes an artist from the array at the index and console.logs the length of the remaining dataset.
  * 
  * For example, if removeArtist is invoked with the data and the number 0,
@@ -254,10 +257,16 @@ Create a function called `removeArtist` that takes two arguments:
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(arrayOf, index) {
+    arrayOf.splice(index, 1);
+    return arrayOf.length + 1;
 }
-   
+
+removeArtist(artists, 0);
+
+
+console.log(removeArtist(artists, 0));
+
 
 /**
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -273,11 +282,21 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-  /*Your Code Here*/
-  }
+function addArtist(name, years, genre, nationality, bio, paintings) {
+    let newArrayObject = {
+      id: artists.length + 2,
+      name,
+      years,
+      genre,
+      nationality,
+      bio,
+      paintings
+    }
+    artists[artists.length] = newArrayObject;
 
-  
+    return artists;
+}
+console.log(addArtist("Denis", "1998-Present", "Anime Watcher", "Planet Vegeta", "Will watch anime for fun, doesn't really like to draw", 420));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
@@ -288,11 +307,15 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(artists){
+   for (let i = 0; i < artists.length; i++){
+    if(artists[i].paintings > 100){
+      console.log(artists[i].name);
+    }
+   }
 }
 
-
+console.log(lotsOfArt(artists))
 
 
 // 🎨🎨 STRETCH 🎨🎨//
