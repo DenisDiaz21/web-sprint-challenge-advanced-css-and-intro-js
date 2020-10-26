@@ -262,7 +262,7 @@ function removeArtist(arrayOf, index) {
     return arrayOf.length + 1;
 }
 
-removeArtist(artists, 0);
+
 
 
 console.log(removeArtist(artists, 0));
