@@ -134,3 +134,32 @@ button:hover{
 .artist img{
     width:100%;
 }
+
+/*Mobile Phone*/
+@media screen and (max-width: 500px) {
+    .artists-container {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap:wrap;
+    }
+
+    .artist {
+        width: 100%;
+    }
+    .artist img {
+        width: 50%;
+        height: auto;
+    }
+    .title-container div {
+        height: auto;
+        width:100%;
+        background-repeat:no-repeat;
+        background-size: contain;
+    }
+    /*Whenever I do h1 { font-size: smaller;} it will not lower the font-size but instead lower the entire image resolution. Even if I do it through targeting the div*/
+    nav {
+        width:60%;
+    }
+
+}  
